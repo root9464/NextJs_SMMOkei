@@ -7,9 +7,9 @@ import Image from 'next/image';
 import {ModalWindow} from './Modal';
 import {useCallback, useState} from 'react';
 import {ModalWindow2} from './Modal2';
-import {usePersonStore} from '@/components/state';
+
 const Header = (): JSX.Element => {
-	const [isPasswordCorrect, setIsPasswordCorrect] = useState(false);
+	const [isPasswordCorrect, setIsPasswordCorrect] = useState(localStorage.getItem('isPasswordCorrect') === 'true');
 
 	const handlePasswordCorrectChange = useCallback((newValue: boolean) => {
 		setIsPasswordCorrect(newValue);

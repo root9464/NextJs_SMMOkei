@@ -1,0 +1,79 @@
+$ui-color: rgb(73, 77, 96);
+$text-color: #25283C;
+$text-color-light: #ffffff;
+
+.main{
+    max-width: 100%;
+    min-height: 100vh;
+    color: $text-color;
+    margin-top: 100px;
+    .container{
+        max-width: 100%;
+        min-height: 100%;
+        //background-color: rgba(0, 255, 255, 0.349);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        align-items: start;
+        align-content: start;
+        break-inside: avoid; 
+        .post{
+            background-color: $ui-color;
+            margin-bottom: 55px;
+            align-items: start;
+            max-width: 500px;
+            height: 300px;
+            padding: 30px;
+            border-radius: 30px;
+            color: $text-color-light;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: flex-start;
+            .p{
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2; /* number of lines to show */
+                -webkit-box-orient: vertical;
+                max-width: 100%;
+                min-height: 70%;
+            }
+        }
+    }
+
+    .line{
+        margin-bottom: 30px;
+        margin-top: 10px;
+        background-color: $ui-color;
+        max-width: 10%;
+        min-height: 5px;
+        border-radius: 30px;
+    }
+}
+
+.header{
+    max-width: 70%;
+    min-height: 80px;
+    background-color: $ui-color;
+    margin: auto;
+    border-radius: 0px 0px 30px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+    color: $text-color-light;
+    .menu{
+        display: flex;
+        gap: 50px;
+        align-items: center;
+        text-align: center;
+    }
+    .button{
+        background-color: $text-color-light;
+    }
+}
+
+.modalbody{
+    color: $text-color;
+}
