@@ -12,6 +12,8 @@ export type User = {
   is_admin: boolean;
 };
 
-type ChildComponentProps = {
+export type ChildComponentProps = {
   onPasswordCorrectChange: (newValue: boolean) => void;
 };
+
+export type PostAdd = Omit<PostType, 'Id'>;

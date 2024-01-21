@@ -14,7 +14,6 @@ const ModalWindow = ({onPasswordCorrectChange}: ChildComponentProps) => {
 	const [isPasswordValid, setIsPasswordValid] = useState(false);
 	useEffect(() => {
 		onPasswordCorrectChange(isPasswordValid);
-		localStorage.setItem('isPasswordCorrect', JSON.stringify(isPasswordValid)); // Опа пошел говнокод спустя 4 часа
 	}, [isPasswordValid, onPasswordCorrectChange]);
 	const {isOpen, onOpen, onOpenChange} = useDisclosure();
 	const supabaseUrl = 'https://fjfcexhrmlodechtmjxu.supabase.co';

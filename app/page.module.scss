@@ -1,4 +1,4 @@
-$ui-color: rgb(73, 77, 96);
+$ui-color: #494d60;
 $text-color: #25283C;
 $text-color-light: #ffffff;
 
@@ -76,4 +76,12 @@ $text-color-light: #ffffff;
 
 .modalbody{
     color: $text-color;
+}
+
+.footer{
+    color: $ui-color;
+    font-size: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }

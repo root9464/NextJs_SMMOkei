@@ -1,14 +1,14 @@
 
 import {Post} from '@/components/Post';
 import styles from './page.module.scss';
-
-export default function Home() {
+import {RenderPost} from '@/components/RenderPost';
+export default async function Home() {
 	return (
 		<main className={styles.main}>
 			<h1>Главная страница</h1>
 			<div className={styles.line}></div>
 			<div className={styles.container}>
-				<Post/>
+				<RenderPost />
 			</div>
 		</main>
 	);

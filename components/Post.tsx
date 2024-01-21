@@ -1,29 +1,8 @@
 
-/* eslint-disable react/display-name */
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-/* eslint-disable @typescript-eslint/no-floating-promises */
-
-'use client';
 import styles from '@/app/page.module.scss';
-import axios from 'axios';
-import {useEffect, useState, memo} from 'react';
 import {type PostType} from '@/types/type';
 
-const Post = memo((): JSX.Element => {
-	const [posts, setPost] = useState<PostType[]>([]);
-	useEffect(() => {
-		const fetchData = async () => {
-			try {
-				const response = await axios.get('http://localhost:8000/allposts');
-				setPost(response.data);
-			} catch (error) {
-				console.error('Error:', error);
-			}
-		};
-
-		fetchData();
-	}, []);
-
+const Post = ({posts}: {posts: PostType[]}): JSX.Element => {
 	return (
 		<>
 			{
@@ -36,6 +15,7 @@ const Post = memo((): JSX.Element => {
 			}
 		</>
 	);
-});
+};
 
 export {Post};
+
