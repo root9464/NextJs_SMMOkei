@@ -51,6 +51,7 @@ $text-color-light: #ffffff;
     }
 }
 
+
 .header{
     max-width: 70%;
     min-height: 80px;
@@ -69,8 +70,16 @@ $text-color-light: #ffffff;
         align-items: center;
         text-align: center;
     }
+    .burger{
+        display: none;
+        background-color: $text-color-light;
+    }
     .button{
         background-color: $text-color-light;
+    }
+    .logo{
+        max-width: 100px;
+        max-height: 100px;
     }
 }
 
@@ -85,3 +94,68 @@ $text-color-light: #ffffff;
     flex-direction: row;
     gap: 10px;
 }
+
+.bc{
+    background-color: $ui-color;
+}
+@media (max-width: 767px) {
+    body{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .main {
+        max-width: 100%;
+        min-height: 100vh;
+        color: $text-color;
+        margin-top: 20px;
+        .container{
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            .post{
+                margin-bottom: 25px;
+            }
+
+        }
+        .line{
+            max-width: 20%;
+
+        }
+    }
+
+    .header{
+        max-width: 100%;
+        min-height: 40px;
+        background-color: $ui-color;
+        margin: auto;
+        border-radius: 0px 0px 30px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 25px;
+        padding-right: 25px;
+
+        .menu{
+            display: none;
+        }
+
+        .burger{
+            display:initial;
+            text-align: center;
+            max-width: 50px;
+            font-size: 15px;
+            max-height: 35px;
+            //background-color: $text-color-light;
+        }
+        .button{
+            background-color: $text-color-light;
+            min-width: 100px;
+            max-height: 40px;
+        }
+        .logo{
+            max-width: 50px;
+            max-height: 50px;
+        }
+    }
+}
+

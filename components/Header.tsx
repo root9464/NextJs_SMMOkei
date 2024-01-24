@@ -12,6 +12,7 @@ import Site from '@/img/Site.svg';
 import Telegram from '@/img/Telegram.svg';
 import Vk from '@/img/Vk.svg';
 import Link from 'next/link';
+import {Burger} from './Burger';
 const Header = (): JSX.Element => {
 	const [isPasswordCorrect, setIsPasswordCorrect] = useState(false);
 
@@ -22,8 +23,9 @@ const Header = (): JSX.Element => {
 	const height: number = 40;
 	return (
 		<header className={styles.header}>
-			<Image src={Logo} alt='Logo' width={100} height={100} />
+			<Image src={Logo} alt='Logo' className={styles.logo} />
 			<h1>Аношка</h1>
+			<Burger/>
 			<div className={styles.menu}>
 				<Link href='/'><Image src={Site} alt='Site' width={width} height={height} /></Link>
 				<Link href='/'><Image src={Telegram} alt='Telegram' width={width} height={height} /></Link>
