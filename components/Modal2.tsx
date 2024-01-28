@@ -13,10 +13,11 @@ import styles from '@/app/page.module.scss';
 import {useEffect, useState} from 'react';
 import {type PostAdd, type PostType} from '@/types/type';
 import {FunDeletePost, useAddPost, useChangePost} from '@/hooks/useMutatations';
+import {useQueryClient} from '@tanstack/react-query';
 const ModalWindow2 = () => {
 	const {isOpen, onOpen, onOpenChange} = useDisclosure();
 	const [deletePostId, setDeletePostId] = useState<number>(0); // Состояние для удаления поста
-
+	const queryClient = useQueryClient();
 	const [inputValue, setInputValue] = useState<string>('');
 	const [titleValue, setTitleValue] = useState<string>('');
 	const [contentValue, setContentValue] = useState<PostAdd>({} as PostAdd);
@@ -39,9 +40,9 @@ const ModalWindow2 = () => {
 		}
 	};
 
-	const deletePost = FunDeletePost(deletePostId);
-	const changePost = useChangePost(changeContentValue);
-	const addPost = useAddPost(contentValue);
+	const deletePost = FunDeletePost(deletePostId, queryClient);
+	const changePost = useChangePost(changeContentValue, queryClient);
+	const addPost = useAddPost(contentValue, queryClient);
 	return (
 		<>
 			<Button onPress={onOpen} className={styles.button}>Панель</Button>
