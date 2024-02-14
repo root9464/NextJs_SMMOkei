@@ -1,4 +1,3 @@
-
 import styles from '@/app/page.module.scss';
 import {type PostType} from '@/types/type';
 
